@@ -16,6 +16,13 @@ sudo apt-get -y install python3-pip
 ### Clone repository 
 
 ```
+git clone https://github.com/ajithkumar666/Llama2ChatModel.git
+```
+```
+cd Llama2ChatModel/
+```
+Install dependacies
+```
 python3 -m pip install -r requirements.txt
 
 ```
@@ -26,25 +33,16 @@ python3 -m pip install -r requirements.txt
 [Request download link](https://ai.meta.com/resources/models-and-libraries/llama-downloads/) 
 
 #### Step 2
-
-```
-git clone https://github.com/ajithkumar666/Llama2ChatModel.git
-```
-#### Step 3
 Once your request is approved, you will receive a signed URL over email. 
 Then run the `download.sh` script, passing the URL provided when prompted to start the download.
 
 Pre-requisites: Make sure you have `wget` and `md5sum` installed. Then to run the script: 
-#### 3.1
-```
-cd Llama2ChatModel/
-```
-#### 3.2
+#### 2.1
 Change `download.sh` to executable.
 ```
 sudo chmod +x download.sh
 ```
-#### 3.3
+#### 2.2
 
 ```
 ./download.sh
