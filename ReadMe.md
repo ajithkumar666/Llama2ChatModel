@@ -20,23 +20,44 @@ python3 -m pip install -r requirements.txt
 
 ```
 
-### Download Llama model
+### Working with LLAMA-2 model
 
-#### step 1
+#### Step 1
 [Request download link](https://ai.meta.com/resources/models-and-libraries/llama-downloads/) 
 
-#### step 2
+#### Step 2
+
+```
+git clone https://github.com/ajithkumar666/Llama2ChatModel.git
+```
+#### Step 3
 Once your request is approved, you will receive a signed URL over email. 
 Then run the `download.sh` script, passing the URL provided when prompted to start the download.
 
-Pre-requisites: Make sure you have `wget` and `md5sum` installed. Then to run the script: `./download.sh`.
+Pre-requisites: Make sure you have `wget` and `md5sum` installed. Then to run the script: 
+#### 3.1
+```
+cd Llama2ChatModel/
+```
+#### 3.2
+Change `download.sh` to executable.
+```
+sudo chmod +x download.sh
+```
+#### 3.3
 
-### Execute Chat Completion 
+```
+./download.sh
+```
+### Execute Chat Completion , example usage
+
 ```
 torchrun --nproc_per_node 1 chat_completion.py \
-    --ckpt_dir llama-2-7b-chat/ \
-    --tokenizer_path tokenizer.model \
-    --max_seq_len 512 --max_batch_size 6
+    --ckpt_dir /root/Llama2ChatModel/llama-2-7b-chat/ \
+    --tokenizer_path /root/Llama2ChatModel/tokenizer.model \
+    --max_seq_len 512 \
+    --max_batch_size 8 \
+    --prompt "what is '(a+b)(a-b)'"
 ```
 
 ### Reference
